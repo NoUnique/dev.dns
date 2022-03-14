@@ -5,11 +5,9 @@ REM Install to AppData\Local directory
 :: https://docs.microsoft.com/ko-kr/windows-server/administration/windows-commands/xcopy
 SET "DIR_CURRENT=%~dp0\.." &call:getRealPath DIR_CURRENT
 SET "DIR_INSTALLED=%LOCALAPPDATA%\dns"
-::IF NOT EXIST "%DIR_INSTALLED%" (
-IF EXIST "%DIR_INSTALLED%" (
-    ECHO "install to local appdata directory: %DIR_INSTALLED%"
-    xcopy %DIR_CURRENT% %DIR_INSTALLED% /s /e /y /i
-)
+
+ECHO "install to local appdata directory: %DIR_INSTALLED%"
+xcopy %DIR_CURRENT% %DIR_INSTALLED% /s /e /y /i
 
 
 ::--------------------------------------------------------
